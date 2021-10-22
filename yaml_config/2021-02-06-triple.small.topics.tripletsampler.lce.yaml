@@ -1,0 +1,33 @@
+"_base_": "optimal_configs/base.yaml"
+
+#'threshold': '100'
+
+'sampler':
+  'name': 'LCEtriplet'
+
+'reranker':
+  'name': 'TFBERTMaxP'
+  'trainer':
+    'name': 'LCEtensorflow'
+    'loss': 'lce'
+    'seed': '42'
+    'niters': '10'
+    'itersize': '48000'
+    'batch': '4'
+    'evalbatch': '256'
+    'decaytype': 'linear'
+    'decay': '0.1'
+    'decayiters': '10'
+    'warmupiters': '1'
+    'amp': 'True'
+    'validatefreq': '10'
+
+  'extractor': 
+    'name': 'LCEbertpassage'
+    'tokenizer':
+      'pretrained': 'bert-base-uncased'
+
+
+
+# current commit id: 3b33b82f9c64980bee2addeee78608f521627d03
+# current commit id: 3b33b82f9c64980bee2addeee78608f521627d03

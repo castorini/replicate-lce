@@ -1,0 +1,53 @@
+'fold': 's1'
+'threshold': '1000'
+'testthreshold': '10'
+'optimize': 'MRR@10'
+'rank':
+  'optimize': 'MRR@10'
+  'searcher':
+    'name': 'msmarcopsgbm25'
+    'tripleversion': 'small'
+
+'benchmark':
+  'name': 'msmarcopsg'
+
+'sampler':
+  'name': 'triplet'
+
+'reranker':
+  'name': 'TFBERTMaxP'
+  'pretrained': 'bert-base-uncased'
+  'trainer':
+    'name': 'tensorflow'
+    'seed': '42'
+    'batch': '16'
+    'evalbatch': '256'
+    'itersize': '48000'
+    'decay': '0.1'
+    'decaytype': 'linear'
+    'niters': '10'
+    'warmupiters': '1'
+    'decayiters': '10'
+    'validatefreq': '10'
+    'usecache': 'True'
+    'amp': 'True'
+    'lr': '1e-5'
+    'bertlr': '1e-5'
+    'disable_position': 'False'
+    'disable_segment': 'False'
+
+  'extractor':
+    'name': 'bertpassage'
+    'maxqlen': '50'
+    'maxseqlen': '256'
+    'numpassages': '1'
+    'usecache': 'True'
+    'nsep1': '1'
+    'nsep2': '1'
+    'cls': '[CLS]'
+    'sep1': '[SEP]'
+    'sep2': '[SEP]'
+    'swapqd': 'False'
+    'shuffle': 'False'
+    'tokenizer':
+      'pretrained': 'bert-base-uncased'

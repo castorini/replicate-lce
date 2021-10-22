@@ -1,0 +1,36 @@
+"_base_": "optimal_configs/base-electra-monobert.yaml"
+
+'rank':
+  'optimize': 'MRR@10'
+  'searcher':
+    'name': 'tct_v2_msmarco'
+    
+'sampler':
+  'name': 'LCEtriplet'
+  'nneg': '31'
+
+'reranker':
+  'name': 'TFBERTMaxP'
+  'trainer':
+    'name': 'LCEtensorflow'
+    'loss': 'lce'
+    'seed': '42'
+    'niters': '10'
+    'itersize': '48000'
+    'batch': '16'
+    'evalbatch': '256'
+    'decaytype': 'linear'
+    'decay': '0.1'
+    'decayiters': '10'
+    'warmupiters': '1'
+    'amp': 'True'
+    'validatefreq': '10'
+
+  'extractor': 
+    'name': 'LCEbertpassage'
+    'nneg': '31'
+    'tokenizer':
+      'pretrained': 'bert-base-uncased'
+
+# current commit id: 0bf04002cbb849d7bf6d7045ce499daef646e3ec
+# current commit id: 0bf04002cbb849d7bf6d7045ce499daef646e3ec

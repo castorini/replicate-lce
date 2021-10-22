@@ -1,0 +1,12 @@
+"_base_": "optimal_configs/base.yaml"
+
+'reranker':
+  'name': 'TFBERTMaxP'
+  'trainer':
+    'batch': '4'
+    'itersize': '48000'
+    'lr': '1e-3'
+    'bertlr': '2e-5'
+
+
+# current commit id: 3b33b82f9c64980bee2addeee78608f521627d03

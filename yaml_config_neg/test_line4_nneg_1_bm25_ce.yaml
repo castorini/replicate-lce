@@ -1,0 +1,30 @@
+"_base_": "optimal_configs/base-electra-monobert.yaml"
+
+'rank':
+  'optimize': 'MRR@10'
+  'searcher':
+    'name': 'msmarcopsgbm25'
+    'tripleversion': 'small'
+    
+'sampler':
+  'name': 'pair'
+
+'benchmark':
+  'name': 'msmarcopsg'
+
+'reranker':
+  'name': 'TFBERTMaxP'
+  'pretrained': 'bert-base-uncased'
+  'trainer':
+    'loss': 'crossentropy'
+    'seed': '42'
+    'niters': '10'
+    'itersize': '48000'
+    'batch': '16'
+    'evalbatch': '256'
+    'decaytype': 'linear'
+    'decay': '0.1'
+    'decayiters': '10'
+    'warmupiters': '1'
+    'amp': 'True'
+    'validatefreq': '10'
