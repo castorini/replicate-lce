@@ -4,11 +4,11 @@
   'optimize': 'MRR@10'
   'searcher':
     'name': 'msptop200'
-    'firststage': 'bm25'
+    'firststage': 'tct'
     
 'sampler':
   'name': 'LCEtriplet'
-  'nneg': '7'
+  'nneg': '31'
 
 'benchmark':
   'name': 'msmarcopsg'
@@ -33,6 +33,6 @@
 
   'extractor': 
     'name': 'LCEbertpassage'
-    'nneg': '7'
+    'nneg': '31'
     'tokenizer':
       'pretrained': 'google/electra-base-discriminator'

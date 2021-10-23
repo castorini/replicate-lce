@@ -3,14 +3,19 @@
 'rank':
   'optimize': 'MRR@10'
   'searcher':
-    'name': 'tct_v2_msmarco'
+    'name': 'msptop200'
+    'firststage': 'tct'
     
 'sampler':
   'name': 'LCEtriplet'
-  'nneg': '15'
+  'nneg': '1'
+
+'benchmark':
+  'name': 'msmarcopsg'
 
 'reranker':
   'name': 'TFBERTMaxP'
+  'pretrained': 'google/electra-base-discriminator'
   'trainer':
     'name': 'LCEtensorflow'
     'loss': 'lce'
@@ -28,8 +33,8 @@
 
   'extractor': 
     'name': 'LCEbertpassage'
-    'nneg': '15'
+    'nneg': '1'
     'tokenizer':
-      'pretrained': 'bert-base-uncased'
+      'pretrained': 'google/electra-base-discriminator'
 
-# current commit id: 0bf04002cbb849d7bf6d7045ce499daef646e3ec
+# current commit id: 9ff156a8e893f9645cbc12e86d1d62da5fb79327

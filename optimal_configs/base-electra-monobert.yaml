@@ -4,9 +4,6 @@
 'optimize': 'MRR@10'
 'rank':
   'optimize': 'MRR@10'
-  'searcher':
-    'name': 'msmarcopsgbm25'
-    'tripleversion': 'small'
 
 'benchmark':
   'name': 'msmarcopsg'
@@ -15,7 +12,7 @@
   'name': 'triplet'
 
 'reranker':
-  'name': 'TFBERTMaxP'
+  'name': 'MultiCLSMaxP'
   'pretrained': 'google/electra-base-discriminator'
   'trainer':
     'name': 'tensorflow'
@@ -29,25 +26,19 @@
     'warmupiters': '1'
     'decayiters': '10'
     'validatefreq': '10'
+    'tpuname': 'None'
+    'tpuzone': 'None'
+    'storage': 'None'
     'usecache': 'True'
     'amp': 'True'
     'lr': '1e-5'
     'bertlr': '1e-5'
-    'disable_position': 'False'
-    'disable_segment': 'False'
 
   'extractor':
-    'name': 'bertpassage'
+    'name': 'LCEbertpassage'
     'maxqlen': '50'
     'maxseqlen': '256'
     'numpassages': '1'
     'usecache': 'True'
-    'nsep1': '1'
-    'nsep2': '1'
-    'cls': '[CLS]'
-    'sep1': '[SEP]'
-    'sep2': '[SEP]'
-    'swapqd': 'False'
-    'shuffle': 'False'
     'tokenizer':
       'pretrained': 'google/electra-base-discriminator'

@@ -3,8 +3,8 @@
 'rank':
   'optimize': 'MRR@10'
   'searcher':
-    'name': 'msmarcopsgbm25'
-    'tripleversion': 'small'
+    'name': 'msptop200'
+    'firststage': 'bm25'
     
 'sampler':
   'name': 'pair'
@@ -14,13 +14,13 @@
 
 'reranker':
   'name': 'TFBERTMaxP'
-  'pretrained': 'bert-base-uncased'
+  'pretrained': 'google/electra-base-discriminator'
   'trainer':
     'loss': 'crossentropy'
     'seed': '42'
     'niters': '10'
-    'itersize': '48000'
-    'batch': '16'
+    'itersize': '96000'
+    'batch': '32'
     'evalbatch': '256'
     'decaytype': 'linear'
     'decay': '0.1'
@@ -28,3 +28,11 @@
     'warmupiters': '1'
     'amp': 'True'
     'validatefreq': '10'
+
+  'extractor':
+    'name': 'bertpassage'
+    'tokenizer':
+      'pretrained': 'google/electra-base-discriminator'
+# current commit id: 9ff156a8e893f9645cbc12e86d1d62da5fb79327
+# current commit id: 9ff156a8e893f9645cbc12e86d1d62da5fb79327
+# current commit id: 9ff156a8e893f9645cbc12e86d1d62da5fb79327

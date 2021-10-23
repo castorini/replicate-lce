@@ -8,7 +8,7 @@
     
 'sampler':
   'name': 'LCEtriplet'
-  'nneg': '7'
+  'nneg': '1'
 
 'benchmark':
   'name': 'msmarcopsg'
@@ -31,8 +31,11 @@
     'amp': 'True'
     'validatefreq': '10'
 
-  'extractor': 
+  'extractor':
     'name': 'LCEbertpassage'
-    'nneg': '7'
+    'nneg': '1'
     'tokenizer':
       'pretrained': 'google/electra-base-discriminator'
+
+# current commit id: 25adc3d12dd9a176b2e8e661bb4f65f7fe62c201
+# current commit id: 9ff156a8e893f9645cbc12e86d1d62da5fb79327
