@@ -1,0 +1,39 @@
+"_base_": "optimal_configs/base-electra-monobert.yaml"
+
+'rank':
+  'optimize': 'MRR@10'
+  'searcher':
+    'name': 'msptop200'
+    'firststage': 'bm25>tct'
+    
+'sampler':
+  'name': 'LCEtriplet'
+  'nneg': '15'
+
+'benchmark':
+  'name': 'msmarcopsg'
+
+'reranker':
+  'name': 'TFBERTMaxP'
+  'pretrained': 'google/electra-base-discriminator'
+  'trainer':
+    'name': 'LCEtensorflow'
+    'loss': 'lce'
+    'seed': '42'
+    'niters': '10'
+    'itersize': '48000'
+    'batch': '16'
+    'evalbatch': '256'
+    'decaytype': 'linear'
+    'decay': '0.1'
+    'decayiters': '10'
+    'warmupiters': '1'
+    'amp': 'both'
+    'validatefreq': '10'
+
+  'extractor': 
+    'name': 'LCEbertpassage'
+    'nneg': '15'
+    'tokenizer':
+      'pretrained': 'google/electra-base-discriminator'
+
