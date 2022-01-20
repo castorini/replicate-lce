@@ -51,8 +51,13 @@ Please note that in table 2 both a and c, b and d are trained with the same yaml
 ### Table3
 | Group-size    | MRR@10 |yaml_file_name | 
 |-------------------------------|----------|---------------|
-| (1) 2      |  0.393  | test_line26_nneg_1_tct_ce.yaml
-| (2) 4      |  0.400 | test_line17_nneg_3_tct_lce.yaml
-| (3) 8       |  0.401  | test_line11_nneg_7_tct_lce.yaml
-| (4) 16      |  0.408  | test_line19_nneg_15_tct_lce.yaml
-| (5) 32      |  0.414  | test_line20_nneg_31_tct_lce.yaml
+| (a-1) 2      |  0.393  | test_line26_nneg_1_tct_ce.yaml
+| (a-2) 4      |  0.400 | test_line17_nneg_3_tct_lce.yaml
+| (a-3) 8       |  0.401  | test_line11_nneg_7_tct_lce.yaml
+| (a-4) 16      |  0.408  | test_line19_nneg_15_tct_lce.yaml
+| (a-5) 32      |  0.414  | test_line20_nneg_31_tct_lce.yaml
+| (b-1) 2      |   0.381 | test_table3_nneg_1-bm25-train.yaml
+| (b-2) 4      |   0.397 | test_table3_nneg_3-bm25-train.yaml
+| (b-3) 8       |  0.402 | test_table3_nneg_7-bm25-train.yaml
+| (b-4) 16      |   0.403  | test_table3_nneg_15-bm25-train.yaml
+| (b-5) 32      |  0.407  | test_table3_nneg_31-bm25-train.yaml
